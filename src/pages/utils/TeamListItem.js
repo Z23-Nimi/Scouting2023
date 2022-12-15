@@ -63,7 +63,7 @@ class TeamListItem extends react.Component{
     var total = 0;
     this.state.snapshot.forEach(entry => {
       if (entry.get("teamNumber") === teamNum){
-          total += (entry.get("teleLow") + entry.get("teleHigh") + entry.get("autoLow") + entry.get("autoHigh"))
+          total += (entry.get("teleLow") + (entry.get("teleHigh")*2) + (entry.get("autoLow")*2) + (entry.get("autoHigh")*4))
       }
     })
     return total;
